@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from 'axios'
 import '../App.css';
 import { FiEdit2 } from "react-icons/fi"
@@ -8,8 +8,7 @@ import { MdDeleteForever } from "react-icons/md"
 
 
 function Form(props) {
-    const [states, setstates] = useState(true)
-
+   
     const list = props.list.map((li, index) => {
 
         function handleClick(li) {

@@ -4,7 +4,7 @@ import axios from 'axios'
 
 function Update(props) {
     
-    const initialFormState = { id: null, name: '', username: '' }
+   
     const [updatelist, setupdatelist] = useState(props.change)
     useEffect(() => {
 
