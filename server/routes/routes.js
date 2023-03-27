@@ -2,7 +2,7 @@ const express = require('express')
 const Task = require('../models/models')
 const router = express.Router()
 
-router.get('/' , (req,res) => {
+router.get('/task' , (req,res) => {
     Task.find((err,docs) => {
         if(err) console.log(err)
         res.json(docs)
