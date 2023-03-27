@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-module.exports = mongoose.connect('mongodb+srv://jackmanoj8686:100171007@atlascluster.bshuteh.mongodb.net/todolist',{
+module.exports = mongoose.connect('mongodb+srv://jackmanoj8686:100171007@atlascluster.bshuteh.mongodb.net/?retryWrites=true&w=majority',{
     useUnifiedTopology : true,
     useNewUrlParser : true,
     useFindAndModify: false 
