@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-module.exports = mongoose.connect('mongodb+srv://jackmanoj8686:100171007@atlascluster.bshuteh.mongodb.net/?retryWrites=true&w=majority',{
+module.exports = mongoose.connect(process.env.DB_LOCAL_URI,{
     useUnifiedTopology : true,
     useNewUrlParser : true,
     useFindAndModify: false 

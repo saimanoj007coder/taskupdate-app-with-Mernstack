@@ -1,5 +1,7 @@
 
 const express = require('express')
+const dotenv = require('dotenv')
+dotenv.config({path:"config/.env"})
 const cors = require('cors')
 const router = require('./routes/routes')
 const app = express()
@@ -7,7 +9,7 @@ require('./models/db')
 app.use(express.json())
 app.use(cors())
 app.use('/api/tasks' , router)
-app.listen('8000' , err => {
+app.listen(process.env.PORT , err => {
     if(err) console.log(err)
-    console.log('Server is started at PORT number : 8000')
+    console.log(`Server is started at PORT number :${process.env.PORT} `)
 })
