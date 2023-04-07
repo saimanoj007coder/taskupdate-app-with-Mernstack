@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import axios from 'axios'
+import { BASE_URL } from "./helper"
 
 function Edit(props) {
   const initialFormState = { id: null, name: '', username: '' }
@@ -18,7 +19,7 @@ function Edit(props) {
     event.preventDefault();
 
     if (!names.name || !names.username) return;
-    axios.post('http://localhost:8000/api/tasks', {
+    axios.post(`${BASE_URL}/api/tasks`, {
       task: names.name,
       time: names.username,
       isComplete:false
@@ -37,7 +38,7 @@ function Edit(props) {
 
     <form onSubmit={UpdateUser}>
       <div className="addsize1"><input className="usesize3" onChange={handleChange} type='text' name="name" placeholder="task" value={names.name} />
-        <input className="usesize4" onChange={handleChange} type='time' name="username" placeholder="time" value={names.username} />
+        <input className="usesize4" onChange={handleChange} type='date' name="username" placeholder="date" value={names.username} />
         <button className="btnsize3">submit</button></div>
     </form>
 

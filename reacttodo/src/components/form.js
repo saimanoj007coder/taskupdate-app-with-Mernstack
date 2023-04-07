@@ -3,24 +3,25 @@ import axios from 'axios'
 import '../App.css';
 import { FiEdit2 } from "react-icons/fi"
 import { MdDeleteForever } from "react-icons/md"
+import { BASE_URL } from './helper';
 
 
 
 
 function Form(props) {
-   
+
     const list = props.list.map((li, index) => {
 
         function handleClick(li) {
-            axios.put(`http://localhost:8000/api/tasks/${li._id}`, {
+            axios.put(`${BASE_URL}/api/tasks/${li._id}`, {
                 _id: li._id,
-                
+
                 isComplete: !li.isComplete
             }).then(res => props.textcross(res.data)).catch(err => console.log(err))
         }
 
         function deleteDetails(id) {
-            axios.delete(`http://localhost:8000/api/tasks/${id}`)
+            axios.delete(`${BASE_URL}/api/tasks/${id}`)
                 .then(res => props.deleteDetails(res.data)).catch(err => console.log(err))
 
         }

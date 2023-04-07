@@ -2,6 +2,7 @@ const express = require('express')
 const Task = require('../models/models')
 const router = express.Router()
 
+
 router.get('/' , (req,res) => {
     Task.find((err,docs) => {
         if(err) console.log(err)
@@ -34,5 +35,7 @@ router.delete('/:id',(req,res) => {
         res.json(doc)
     })
 })
-
+ router.get("/",(req,res)=>{
+    const {q} = req                                                                                         
+ })
 module.exports = router

@@ -4,17 +4,23 @@ import axios from 'axios'
 import Form from './components/form';
 import Edit from './components/Adduser';
 import Update from './components/update';
-import Header from './components/Header';
+
+import { BASE_URL } from './components/helper';
+import Filter from './components/Filter';
+
 
 
 function App() {
   const initialFormState = { id: null, name: '', username: '' }
   const [list, setlist] = useState([])
+  const [api, setapi] = useState([])
+
 
   useEffect(() => {
 
-    axios.get('http://localhost:8000/api/tasks').then(res => {
+    axios.get(`${BASE_URL}/api/tasks`).then(res => {
       setlist(res.data)
+      setapi(res.data)
     }).catch(err => console.log(err))
 
 
@@ -24,7 +30,7 @@ function App() {
 
   const [change, setchange] = useState(initialFormState)
 
-// adding value for the function
+  // adding value for the function
 
   function addUser(n) {
     setlist([...list, n])
@@ -45,7 +51,7 @@ function App() {
     seteditlist(false)
 
   }
-//delete the value from todolist
+  //delete the value from todolist
 
   function deleteDetails(li) {
     setlist(list.filter((lis) => (lis._id !== li._id)))
@@ -65,15 +71,27 @@ function App() {
     })
     setlist(newList)
   }
-//cancel the edit form
+  //cancel the edit form
   function cancelEvent() {
     seteditlist(false);
   }
 
+  //search 
+  function searchItems(tasks) {
+    if(tasks===""){
+      setlist(list)
+    }else{
+    const filterResult = api.filter(item => item.task.toLowerCase().includes(tasks.toLowerCase()))
+    setlist(filterResult)
+
+
+    }}
+
 
   return (
     <div>
-      <Header />
+      
+      <Filter searchItems={searchItems} />
 
       <Form
         list={list}
@@ -81,7 +99,7 @@ function App() {
         editlist={editlist}
         deleteDetails={deleteDetails}
         textcross={textcross}
-        />
+      />
       {editlist ? <Update change={change} cancelEvent={cancelEvent} updatelistvalues={updatelistvalues} /> : <Edit change={change} addUser={addUser} />}
     </div>);
 }

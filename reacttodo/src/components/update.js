@@ -1,6 +1,7 @@
 import React from "react"
 import { useState, useEffect } from "react"
 import axios from 'axios'
+import { BASE_URL } from './helper';
 
 function Update(props) {
     
@@ -27,7 +28,7 @@ function Update(props) {
 
 
         if (!updatelist.name || !updatelist.username) return;
-        axios.put(`http://localhost:8000/api/tasks/${updatelist._id}`, {
+        axios.put(`${BASE_URL}/api/tasks/${updatelist._id}`, {
             _id: updatelist._id,
             task: updatelist.name,
             time: updatelist.username
@@ -43,7 +44,7 @@ function Update(props) {
         <form onSubmit={updatelistvalues} >
             <div className="addsize2">
                 <input className="usesize3" onChange={handleChange} type='text' name="name" value={updatelist.name} />
-                <input className="usesize4" onChange={handleChange} type='time' name="username" value={updatelist.username} />
+                <input className="usesize4" onChange={handleChange} type='date' name="username" value={updatelist.username} />
                 <button className="btnsize3" >submit</button>
                 <button onClick={() => { props.cancelEvent() }} className="btnsize4">cancel</button></div>
         </form>

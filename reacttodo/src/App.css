@@ -41,19 +41,20 @@
 .textcross {
   text-decoration: line-through;
 }
-html{
+
+html {
   background-color: #FFD966;
 }
 
 .btnsize1 {
-  background-color:#00425A;
+  background-color: #00425A;
   color: aliceblue;
   width: 100px;
   height: 40px;
   border: none;
   border-radius: 5px;
   padding: 5px;
-  
+
   margin-top: 150px;
   margin-left: 50px;
   position: absolute;
@@ -79,13 +80,13 @@ html{
 
 .maincontent1 {
   position: relative;
-  background-color:#62CDFF;
-  left: 12%;
+  background-color: #62CDFF;
+
   width: 400px;
   height: 200px;
   margin-top: 30px;
   padding: 10px;
-  margin-left: 330px;
+  margin-left: 100px;
   border: #282c34;
   border: solid;
   border-radius: 10px;
@@ -93,12 +94,16 @@ html{
 
 .maincontent2 {
   position: relative;
-  left: 12%;
-  width: 300px;
-  background-color: chocolate;
-  border-radius: 10px;
+  background-color: #62CDFF;
+
+  width: 478px;
+  height: 90px;
+  margin-top: 30px;
   padding: 10px;
-  margin-left: 30px;
+  margin-left: 100px;
+  border: #282c34;
+  border: solid;
+  border-radius: 10px;
 }
 
 .container {
@@ -136,7 +141,7 @@ html{
 }
 
 .btnsize3 {
-  background-color:#00425A;
+  background-color: #00425A;
   color: aliceblue;
   width: 100px;
   height: 40px;
@@ -176,19 +181,33 @@ html{
   min-width: 250px;
 }
 
+.usesize5 {
+  position: absolute;
+  background-color: white;
+  color: black;
+  border: solid black;
+  border-radius: 5px;
+  margin-top: -65px;
+  margin-left: 550px;
+
+  height: 40px;
+  min-width: 250px;
+}
+
 .addsize1 {
   position: relative;
   width: 700px;
   height: 90px;
   background-color: #97DEFF;
   margin: 30px;
-  margin-left:350px;
-  padding-right: 20px ;
-  padding-left: 20px ;
+  margin-left: 50px;
+  padding-right: 20px;
+  padding-left: 20px;
   border-radius: 10px;
   border: #282c34;
   border: solid;
 }
+
 .addsize2 {
   position: relative;
   width: 820px;
@@ -198,12 +217,13 @@ html{
   border-radius: 10px;
   border: #282c34;
   border: solid;
-  padding-right: 20px ;
-  padding-left: 20px ;
-  margin-left: 320px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-left: 35px;
 }
+
 .btnsize4 {
-  background-color:#00425A;
+  background-color: #00425A;
   color: aliceblue;
   width: 100px;
   height: 40px;
@@ -215,26 +235,30 @@ html{
   margin-left: 690px;
   position: absolute;
 }
+
 .addsize3 {
-  position: relative;
-  width: 465px;
+
+  display: flex;
+  width: 478px;
   height: 90px;
   background-color: #97DEFF;
-  margin: 30px;
+  margin-top: 30px;
   border-radius: 10px;
   border: #282c34;
   border: solid;
-  
-  margin-left: 515px;}
-.addsize{
-  margin-left: 140px;
-  color:#00425A;
+  margin-left: 112px;
 }
 
-.edit{
-  
+.addsize {
+  margin-left: 140px;
+  color: #00425A;
+}
+
+.edit {
+
   padding: 5px;
 }
-p.taskcomplete{
-text-decoration: line-through;
+
+p.taskcomplete {
+  text-decoration: line-through;
 }
